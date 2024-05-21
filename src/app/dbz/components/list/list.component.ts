@@ -16,8 +16,8 @@ export class ListComponent {
   @Output()
   public onDeleteId: EventEmitter<string> = new EventEmitter();
 
-  onDeleteCharacter(index: string): void {
-    //Emitir el ID del personaje
+  onDeleteCharacter(index?: string): void {
+    if (!index) return;
     this.onDeleteId.emit(index);
   }
 }
